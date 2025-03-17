@@ -1,0 +1,285 @@
+{
+  "common": {
+    "loading": "Загрузка...",
+    "save": "Сохранить",
+    "saving": "Сохранение...",
+    "delete": "Удалить",
+    "edit": "Редактировать",
+    "cancel": "Отмена",
+    "confirm": "Подтвердить",
+    "search": "Поиск",
+    "noResults": "Ничего не найдено",
+    "error": "Произошла ошибка",
+    "show": "Показать",
+    "hide": "Скрыть",
+    "changeLanguage": "Сменить язык",
+    "retry": "Повторить",
+    "creator": "Создатель",
+    "backToList": "Вернуться к списку",
+    "backToFlows": "Вернуться к сценариям",
+    "yes": "Да",
+    "no": "Нет",
+    "add": "Добавить",
+    "status": "Статус",
+    "active": "Активен",
+    "inactive": "Неактивен",
+    "success": "Успех",
+    "actions": "Действия",
+    "action": "Действия"
+  },
+  "app_title": "Телеграм Бот Админ",
+  "language": "Язык",
+  "theme": {
+    "light": "Светлая",
+    "dark": "Темная",
+    "system": "Системная"
+  },
+  "navigation": {
+    "title": "Навигация",
+    "dashboard": "Панель управления",
+    "chats": "Чаты",
+    "flows": "Опросы",
+    "commands": "Команды",
+    "settings": "Настройки",
+    "dialogs": "Диалоги",
+    "operators": "Операторы",
+    "logout": "Выйти"
+  },
+  "dashboard": {
+    "title": "Панель управления",
+    "welcome": "Добро пожаловать в панель управления",
+    "overview": "Мониторинг производительности и активности вашего бота",
+    "statistics": "Ключевая статистика",
+    "activeUsers": "Активные пользователи",
+    "totalChats": "Всего чатов",
+    "successRate": "Успешность",
+    "responseTime": "Сред. время ответа",
+    "activeFlows": "Активные сценарии",
+    "activeFlowsDescription": "Текущие активные сценарии для взаимодействия",
+    "manageFlows": "Управление сценариями",
+    "recentActivity": "Последняя активность",
+    "recentActivityDescription": "Последние взаимодействия с пользователями и системные события",
+    "viewAllActivity": "Просмотреть всю активность",
+    "settings": "Настройки"
+  },
+  "chats": {
+    "title": "Чаты",
+    "searchPlaceholder": "Поиск по имени пользователя или сообщению",
+    "noChats": "Чаты не найдены",
+    "status": {
+      "active": "Активный",
+      "pending": "В ожидании",
+      "closed": "Закрыт"
+    },
+    "lastMessage": "Последнее сообщение",
+    "lastActivity": "Последняя активность",
+    "newMessage": "Новое сообщение",
+    "startNewChat": "Начать новый чат"
+  },
+  "commands": {
+    "title": "Команды бота",
+    "description": "Управление командами бота",
+    "addCommand": "Добавить команду",
+    "editCommand": "Редактировать команду",
+    "commandName": "Команда",
+    "commandDescription": "Описание",
+    "response": "Ответ",
+    "isActive": "Активна",
+    "noCommands": "Команды не найдены",
+    "newCommand": "Новая команда",
+    "deleteCommand": "Удалить команду",
+    "search": "Поиск команд..."
+  },
+  "flows": {
+    "title": "Сценарии",
+    "description": "Создание и управление сценариями диалогов",
+    "create": "Создать сценарий",
+    "search": "Поиск сценариев...",
+    "columns": {
+      "name": "Название",
+      "description": "Описание",
+      "steps": "Шаги",
+      "active": "Активен",
+      "default": "По умолчанию",
+      "actions": "Действия"
+    },
+    "responses": "Ответы",
+    "noFlows": "Сценарии не найдены",
+    "loading": "Загрузка сценариев...",
+    "error": "Ошибка загрузки сценариев",
+    "errorFetching": "Ошибка при загрузке сценариев. Пожалуйста, попробуйте снова.",
+    "flowName": "Название сценария",
+    "flowDescription": "Описание",
+    "stepCount": "Шаги",
+    "default": "По умолчанию",
+    "errorCreating": "Ошибка при создании сценария. Пожалуйста, попробуйте снова.",
+    "errorUpdating": "Ошибка при обновлении сценария. Пожалуйста, попробуйте снова.",
+    "errorAddingStep": "Ошибка при добавлении шага. Пожалуйста, попробуйте снова.",
+    "createSuccess": "Сценарий успешно создан!",
+    "updateSuccess": "Сценарий успешно обновлен!",
+    "addFlow": "Добавить сценарий",
+    "editFlow": "Редактировать сценарий",
+    "isActive": "Активен",
+    "isDefault": "По умолчанию",
+    "tips": "Советы",
+    "steps": {
+      "stepCounter": "Счетчик шагов",
+      "stepCounterHidden": "Счетчик шагов скрыт (например: \"1 из 5\")",
+      "stepCounterVisible": "Счетчик шагов отображается (например: \"1 из 5\")",
+      "showStepCounter": "Показать счетчик шагов",
+      "hideStepCounter": "Скрыть счетчик шагов"
+    },
+    "addStep": "Добавить шаг",
+    "stepTitle": "Название шага",
+    "stepText": "Текст сообщения",
+    "buttons": "Кнопки",
+    "addButton": "Добавить кнопку",
+    "buttonText": "Текст кнопки",
+    "buttonType": {
+      "callback": "Callback",
+      "url": "URL",
+      "nextStep": "Следующий шаг"
+    },
+    "noNextStep": "По умолчанию (последовательно)",
+    "formatting": "Форматирование текста",
+    "noFormatting": "Без форматирования",
+    "htmlTags": "HTML позволяет использовать теги как <b>, <i>, <u>, <s>, <a href=\"\">, <code>, <pre>",
+    "editStep": "Редактировать шаг",
+    "emoji": "Эмодзи",
+    "buttonRow": "Строка",
+    "media": {
+      "title": "Медиа-файл",
+      "uploadFile": "Загрузить файл",
+      "orDrag": "или перетащите сюда",
+      "supportedFormats": "PNG, JPG, GIF, MP4, MP3, PDF, DOCX, TXT до 10MB",
+      "untitledFile": "Файл без имени",
+      "type": "Тип",
+      "imagePreview": "Предпросмотр изображения",
+      "caption": "Подпись к медиа",
+      "captionPlaceholder": "Введите подпись (необязательно)",
+      "uploading": "Загрузка...",
+      "uploadError": "Ошибка при загрузке файла. Пожалуйста, попробуйте еще раз."
+    },
+    "buttons": {
+      "style": "Стиль кнопок",
+      "inlineButtons": "Инлайн кнопки",
+      "inlineDescription": "Кнопки будут расположены под сообщением",
+      "keyboardButtons": "Keyboard кнопки",
+      "keyboardDescription": "Кнопки будут расположены в виде клавиатуры"
+    },
+    "conditions": {
+      "title": "Условия перехода к шагу",
+      "addCondition": "Добавить условие",
+      "noConditions": "Нет заданных условий. Добавьте условие, чтобы настроить когда будет показан этот шаг.",
+      "previousStep": "Предыдущий шаг",
+      "anyPrevStep": "Любой предыдущий шаг",
+      "selectPrevStep": "Выберите предыдущий шаг",
+      "responseConditions": "Условия ответа",
+      "addOption": "Добавить вариант",
+      "valueToCheck": "Значение для проверки",
+      "operators": {
+        "equals": "Равно",
+        "contains": "Содержит",
+        "startsWith": "Начинается с",
+        "endsWith": "Заканчивается на",
+        "regex": "Регулярное выражение"
+      }
+    }
+  },
+  "responses": {
+    "title": "Ответы на сценарии",
+    "id": "ID",
+    "client": "Клиент",
+    "flow": "Сценарий",
+    "responsesCount": "Ответы",
+    "status": "Статус",
+    "createdAt": "Создан",
+    "completedAt": "Завершен",
+    "actions": "Действия",
+    "noResponses": "Ответы не найдены",
+    "completed": "Завершен",
+    "inProgress": "В процессе",
+    "viewResponses": "Просмотр ответов",
+    "responseDetails": "Детали ответа"
+  },
+  "flow_detail": {
+    "steps": "Шаги",
+    "addStep": "Добавить шаг",
+    "noSteps": "В этом сценарии пока нет шагов",
+    "editFlow": "Редактировать сценарий",
+    "deleteFlow": "Удалить сценарий",
+    "back": "Вернуться к сценариям",
+    "loading": "Загрузка деталей сценария...",
+    "error": "Ошибка загрузки сценария"
+  },
+  "settings": {
+    "title": "Настройки",
+    "description": "Управление конфигурацией бота",
+    "sections": {
+      "bot": {
+        "title": "Конфигурация бота",
+        "token": "Токен бота",
+        "tokenDescription": "Получите этот токен у @BotFather",
+        "webhook": "URL вебхука",
+        "webhookDescription": "URL, куда Telegram будет отправлять обновления"
+      },
+      "messages": {
+        "title": "Настройки сообщений",
+        "welcome": "Приветственное сообщение",
+        "offline": "Сообщение об отсутствии",
+        "responseTime": "Время ответа (минуты)",
+        "autoRespond": "Автоматически отвечать на сообщения"
+      },
+      "notifications": {
+        "title": "Настройки уведомлений",
+        "email": "Email для уведомлений",
+        "notifyOn": "Уведомлять меня когда:",
+        "newChat": "Создан новый чат",
+        "operatorAssigned": "Оператор назначен на чат",
+        "chatClosed": "Чат закрыт"
+      }
+    }
+  },
+  "operators": {
+    "title": "Операторы",
+    "description": "Управление операторами чата",
+    "addOperator": "Добавить оператора",
+    "editOperator": "Редактировать оператора",
+    "name": "Имя",
+    "email": "Email",
+    "role": "Роль",
+    "status": "Статус",
+    "noOperators": "Операторы не найдены",
+    "roles": {
+      "admin": "Администратор",
+      "operator": "Оператор",
+      "viewer": "Наблюдатель"
+    },
+    "newOperator": "Новый оператор",
+    "search": "Поиск операторов...",
+    "deleteOperator": "Удалить оператора",
+    "isActive": "Активен",
+    "lastActive": "Последняя активность"
+  },
+  "dialogs": {
+    "title": "Диалоги",
+    "description": "Управление автоматизированными сценариями диалогов",
+    "addDialog": "Добавить диалог",
+    "editDialog": "Редактировать диалог",
+    "trigger": "Триггер",
+    "response": "Ответ",
+    "conditions": "Условия",
+    "actions": "Действия",
+    "noDialogs": "Диалоги не найдены",
+    "confirm": "Подтвердить",
+    "delete": {
+      "title": "Подтверждение удаления",
+      "message": "Вы уверены, что хотите удалить этот элемент? Это действие нельзя отменить."
+    }
+  },
+  "notFound": {
+    "title": "Страница не найдена",
+    "message": "Извините, запрашиваемая страница не существует или была перемещена.",
+    "backToHome": "Вернуться на главную"
+  }
+} 

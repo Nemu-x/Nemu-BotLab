@@ -1,0 +1,70 @@
+{
+  "settings": {
+    "sections": {
+      "commands": {
+        "title": "Bot Commands",
+        "add": "Add Command",
+        "question": "Question",
+        "answer": "Answer",
+        "active": "Active",
+        "questionPlaceholder": "Enter question or command",
+        "answerPlaceholder": "Enter answer to the question"
+      }
+    }
+  },
+  "flows": {
+    "noSteps": "No steps added yet. Add your first step to your flow.",
+    "addStep": "Add Step",
+    "steps": "Steps",
+    "default": "Default",
+    "stepTitle": "Step Title",
+    "stepText": "Step Text",
+    "buttons": "Buttons",
+    "addButton": "Add Button",
+    "buttonText": "Button Text",
+    "buttonType": {
+      "callback": "Callback",
+      "url": "URL Link",
+      "nextStep": "Next Step"
+    },
+    "errorAddingStep": "Error adding step. Please try again.",
+    "errorCreating": "Error creating flow. Please try again.",
+    "errorUpdating": "Error updating flow. Please try again.",
+    "createSuccess": "Flow created successfully",
+    "updateSuccess": "Flow updated successfully",
+    "addFlow": "Add Flow",
+    "editFlow": "Edit Flow",
+    "description": "Manage interactive flows for your users",
+    "flowName": "Flow Name",
+    "flowDescription": "Flow Description",
+    "isActive": "Active",
+    "isDefault": "Default",
+    "tips": "Tips",
+    "noFlows": "No active flows"
+  },
+  "dashboard": {
+    "welcome": "Welcome to the Dashboard",
+    "overview": "Overview of your bot",
+    "statistics": "Statistics",
+    "activeUsers": "Active Users",
+    "totalChats": "Total Chats",
+    "successRate": "Response Rate",
+    "responseTime": "Avg. Response Time",
+    "activeFlows": "Active Flows",
+    "activeFlowsDescription": "Flows that are currently active for your users",
+    "manageFlows": "Manage Flows",
+    "recentActivity": "Recent Activity",
+    "recentActivityDescription": "Latest user actions and system events",
+    "viewAllActivity": "View All Activity"
+  },
+  "common": {
+    "backToList": "Back to List",
+    "cancel": "Cancel",
+    "save": "Save",
+    "saving": "Saving...",
+    "retry": "Retry",
+    "delete": "Delete",
+    "loading": "Loading...",
+    "active": "Active"
+  }
+} 

@@ -1,0 +1,138 @@
+import { NextResponse } from 'next/server';
+import { mockFlows, updateMockFlows } from './mockData';
+
+// Начальные данные для flows, если в localStorage ничего нет
+let mockFlows = [
+  {
+    id: 1,
+    name: 'Customer Satisfaction Survey',
+    description: 'A survey to collect customer feedback about our services',
+    isActive: true,
+    isDefault: true,
+    steps: [
+      {
+        id: 1,
+        flowId: 1,
+        title: 'Welcome',
+        message: 'Thank you for participating in our survey!',
+        order: 1,
+        buttons: [{ text: 'Start' }]
+      },
+      {
+        id: 2,
+        flowId: 1,
+        title: 'Rating',
+        message: 'How would you rate our service?',
+        order: 2,
+        buttons: [
+          { text: 'Excellent' },
+          { text: 'Good' },
+          { text: 'Average' },
+          { text: 'Poor' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 2,
+    name: 'Product Feedback',
+    description: 'Collect feedback about our new product',
+    isActive: false,
+    isDefault: false,
+    steps: []
+  },
+  {
+    id: 3,
+    name: 'User Registration Form',
+    description: 'Automated registration flow for new users',
+    isActive: true,
+    isDefault: false,
+    steps: [
+      {
+        id: 3,
+        flowId: 3,
+        title: 'Contact Information',
+        message: 'Please provide your contact information',
+        order: 1,
+        buttons: [{ text: 'Continue' }]
+      }
+    ]
+  }
+];
+
+// Используем Node.js runtime, а не Edge runtime
+export const runtime = 'nodejs';
+
+export async function GET() {
+  try {
+    console.log('GET /api/flows - Returning all flows');
+    
+    // Добавляем задержку для имитации реального API
+    await new Promise(resolve => setTimeout(resolve, 300));
+    
+    return NextResponse.json(mockFlows);
+  } catch (error) {
+    console.error('Error fetching flows:', error);
+    return NextResponse.json(
+      { error: 'Failed to fetch flows' },
+      { status: 500 }
+    );
+  }
+}
+
+export async function POST(request: Request) {
+  try {
+    const data = await request.json();
+    console.log('POST /api/flows - Creating new flow');
+    console.log('Request data:', data);
+    
+    // Добавляем задержку для имитации реального API
+    await new Promise(resolve => setTimeout(resolve, 500));
+    
+    // Validate required fields
+    if (!data.name) {
+      return NextResponse.json(
+        { error: 'Flow name is required' },
+        { status: 400 }
+      );
+    }
+    
+    // Generate a new ID (incremental)
+    const maxId = mockFlows.length > 0
+      ? Math.max(...mockFlows.map(flow => flow.id || 0))
+      : 0;
+    
+    const newId = maxId + 1;
+    
+    // Если flow помечен как isDefault=true, сбросим этот флаг у всех остальных flows
+    if (data.isDefault) {
+      const updatedFlows = mockFlows.map(flow => ({
+        ...flow,
+        isDefault: false
+      }));
+      updateMockFlows(updatedFlows);
+    }
+    
+    // Create new flow object
+    const newFlow = {
+      ...data,
+      id: newId,
+      steps: data.steps || []
+    };
+    
+    // Add to mockFlows and update the shared state
+    const newFlows = [...mockFlows, newFlow];
+    updateMockFlows(newFlows);
+    
+    console.log('New flow created:', newFlow);
+    console.log('Total flows:', mockFlows.length);
+    
+    return NextResponse.json(newFlow, { status: 201 });
+  } catch (error) {
+    console.error('Error creating flow:', error);
+    return NextResponse.json(
+      { error: 'Failed to create flow' },
+      { status: 500 }
+    );
+  }
+} 

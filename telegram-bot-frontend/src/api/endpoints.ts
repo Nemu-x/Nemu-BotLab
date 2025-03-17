@@ -1,0 +1,68 @@
+export const API_ENDPOINTS = {
+  auth: {
+    login: '/auth/login',
+    register: '/auth/register',
+    logout: '/auth/logout',
+    me: '/auth/me',
+  },
+  users: {
+    getAll: '/users',
+    getById: (id: number) => `/users/${id}`,
+    create: '/users',
+    update: (id: number) => `/users/${id}`,
+    delete: (id: number) => `/users/${id}`,
+  },
+  clients: {
+    getAll: '/clients',
+    getById: (id: number) => `/clients/${id}`,
+    update: (id: number) => `/clients/${id}`,
+    delete: (id: number) => `/clients/${id}`,
+    getMessages: (id: number) => `/clients/${id}/messages`,
+    sendMessage: (id: number) => `/clients/${id}/messages`,
+    toggleDialog: (id: number) => `/clients/${id}/toggle-dialog`,
+    updateLanguage: (id: number) => `/clients/${id}/language`,
+    getByLanguage: (language: string) => `/clients/language/${language}`,
+  },
+  operators: {
+    getAll: '/operators',
+    getById: (id: number) => `/operators/${id}`,
+    create: '/operators',
+    update: (id: number) => `/operators/${id}`,
+    delete: (id: number) => `/operators/${id}`,
+  },
+  settings: {
+    getAll: '/settings',
+    getByKey: (key: string) => `/settings/${key}`,
+    update: (key: string) => `/settings/${key}`,
+  },
+  flows: {
+    getAll: '/flows',
+    getById: (id: number) => `/flows/${id}`,
+    create: '/flows',
+    update: (id: number) => `/flows/${id}`,
+    delete: (id: number) => `/flows/${id}`,
+    sendToClient: (flowId: number, clientId: number) => `/flows/${flowId}/send/${clientId}`,
+    sendBulkByLanguage: (language: string) => `/clients/language/${language}/flow`,
+  },
+  commands: {
+    getAll: '/commands',
+    getById: (id: number) => `/commands/${id}`,
+    create: '/commands',
+    update: (id: number) => `/commands/${id}`,
+    delete: (id: number) => `/commands/${id}`,
+  },
+  messages: {
+    sendBulk: '/messages/bulk',
+    sendBulkByLanguage: (language: string) => `/clients/language/${language}/message`,
+  },
+  // Tickets
+  tickets: {
+    getAll: '/tickets',
+    getById: (id: number) => `/tickets/${id}`,
+    create: '/tickets',
+    update: (id: number) => `/tickets/${id}`,
+    delete: (id: number) => `/tickets/${id}`,
+    assignToOperator: (id: number, operatorId: number) => `/tickets/${id}/assign/${operatorId}`,
+    changeStatus: (id: number, status: string) => `/tickets/${id}/status/${status}`,
+  },
+}; 

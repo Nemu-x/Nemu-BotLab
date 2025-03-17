@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "@nestjs/cli": "^11.0.5",
+    "eslint": "^7.32.0"
+  },
+  "dependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

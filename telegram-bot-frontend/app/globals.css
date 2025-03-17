@@ -1,0 +1,525 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 6%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 22%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 16%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 16%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 0 0% 16%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 18%;
+    --input: 0 0% 16%;
+    --ring: 0 0% 22%;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-md font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 transition-colors;
+  }
+  
+  .btn-primary {
+    @apply inline-flex justify-center rounded-md bg-primary-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-primary-500 dark:hover:bg-primary-400;
+  }
+  
+  .btn-secondary {
+    @apply inline-flex justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 dark:bg-gray-800 dark:text-white dark:ring-gray-700 dark:hover:bg-gray-700;
+  }
+
+  .input {
+    @apply block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 dark:bg-gray-800 dark:text-white dark:ring-gray-700 dark:placeholder:text-gray-500 dark:focus:ring-primary-500 sm:text-sm sm:leading-6;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+}
+
+* {
+  @apply border-border;
+}
+
+body {
+  @apply bg-background text-foreground;
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+/* Стиль для темной темы в стиле it-manifest.com */
+.dark {
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 17, 17, 17;
+  
+  /* Основные цвета it-manifest.com (более темные, меньше синих оттенков) */
+  --primary-dark: #0f0f0f;
+  --secondary-dark: #1a1a1a;
+  --accent-dark: #2a2a2a;
+  --highlight-dark: #3a3a3a;
+  --text-primary-dark: #ffffff;
+  --text-secondary-dark: #aaaaaa;
+  --border-dark: #303030;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+}
+
+.dark body {
+  background-color: var(--primary-dark);
+  color: var(--text-primary-dark);
+}
+
+.dark .bg-gray-800 {
+  background-color: var(--secondary-dark);
+}
+
+.dark .bg-gray-900 {
+  background-color: var(--primary-dark);
+}
+
+.dark .bg-gray-700 {
+  background-color: var(--accent-dark);
+}
+
+.dark .border-gray-700 {
+  border-color: var(--border-dark);
+}
+
+.dark .text-gray-300,
+.dark .text-gray-400 {
+  color: var(--text-secondary-dark);
+}
+
+.dark .text-white {
+  color: var(--text-primary-dark);
+}
+
+/* Настраиваем кнопки в темной теме */
+.dark .bg-blue-500 {
+  background-color: #505050;
+}
+
+.dark .bg-blue-600 {
+  background-color: #404040;
+}
+
+.dark .bg-blue-900 {
+  background-color: #303030;
+}
+
+/* Hover состояния */
+.dark .hover\:bg-gray-700:hover {
+  background-color: var(--accent-dark);
+}
+
+.dark .hover\:bg-blue-600:hover {
+  background-color: #404040;
+}
+
+/* Глобальные переопределения для темной темы */
+.dark .bg-gray-900 { background-color: var(--primary-dark) !important; }
+.dark .bg-gray-800 { background-color: var(--secondary-dark) !important; }
+.dark .bg-gray-700 { background-color: var(--accent-dark) !important; }
+.dark .bg-gray-600 { background-color: var(--accent-dark) !important; }
+.dark .border-gray-700 { border-color: var(--border-dark) !important; }
+.dark .border-gray-600 { border-color: var(--border-dark) !important; }
+.dark .text-white { color: var(--text-primary-dark) !important; }
+.dark .text-gray-400, .dark .text-gray-300 { color: var(--text-secondary-dark) !important; }
+
+/* Исправления для таблиц */
+.dark thead { background-color: var(--secondary-dark) !important; }
+.dark tbody { background-color: var(--primary-dark) !important; }
+.dark th { color: var(--text-primary-dark) !important; }
+
+/* Исправления для карточек */
+.dark .card { background-color: var(--secondary-dark) !important; }
+
+/* Исправления для кнопок */
+.dark .bg-blue-500, .dark .bg-blue-600, .dark .bg-indigo-500, .dark .bg-indigo-600 { 
+  background-color: var(--highlight-dark) !important; 
+}
+.dark .hover\:bg-blue-600:hover, .dark .hover\:bg-indigo-600:hover {
+  background-color: #444444 !important;
+}
+
+/* Исправления для активных состояний */
+.dark .bg-blue-50, .dark .bg-indigo-50 {
+  background-color: #333333 !important;
+}
+.dark .text-blue-600, .dark .text-indigo-600 {
+  color: #aaaaaa !important;
+}
+
+/* Цвета для статусов тикетов */
+.dark .bg-green-100 { background-color: rgba(34, 197, 94, 0.2) !important; }
+.dark .bg-blue-100 { background-color: rgba(59, 130, 246, 0.2) !important; }
+.dark .bg-yellow-100 { background-color: rgba(234, 179, 8, 0.2) !important; }
+.dark .bg-red-100 { background-color: rgba(239, 68, 68, 0.2) !important; }
+.dark .bg-purple-100 { background-color: rgba(168, 85, 247, 0.2) !important; }
+.dark .bg-orange-100 { background-color: rgba(249, 115, 22, 0.2) !important; }
+
+.dark .text-green-800 { color: rgb(134, 239, 172) !important; }
+.dark .text-blue-800 { color: rgb(147, 197, 253) !important; }
+.dark .text-yellow-800 { color: rgb(253, 224, 71) !important; }
+.dark .text-red-800 { color: rgb(252, 165, 165) !important; }
+.dark .text-purple-800 { color: rgb(216, 180, 254) !important; }
+.dark .text-orange-800 { color: rgb(254, 215, 170) !important; }
+
+/* Цвета для индикаторов */
+.dark .border-green-500, .dark .border-blue-500, .dark .border-yellow-500, 
+.dark .border-red-500, .dark .border-purple-500, .dark .border-orange-500 {
+  border-color: #333333 !important;
+}
+
+/* Стили для полей форм */
+.dark input, .dark select, .dark textarea {
+  background-color: var(--accent-dark) !important;
+  border-color: var(--border-dark) !important;
+  color: var(--text-primary-dark) !important;
+}
+
+.dark input::placeholder {
+  color: var(--text-secondary-dark) !important;
+}
+
+/* Дополнительные исправления для синих элементов на всех страницах */
+.dark .bg-blue-500, .dark .bg-blue-600, .dark .bg-blue-700,
+.dark .bg-indigo-500, .dark .bg-indigo-600, .dark .bg-indigo-700,
+.dark .bg-primary-500, .dark .bg-primary-600, .dark .bg-primary-700 {
+  background-color: var(--accent-dark) !important;
+}
+
+.dark .hover\:bg-blue-700:hover, .dark .hover\:bg-blue-800:hover,
+.dark .hover\:bg-indigo-700:hover, .dark .hover\:bg-indigo-800:hover, 
+.dark .hover\:bg-primary-700:hover, .dark .hover\:bg-primary-800:hover {
+  background-color: var(--highlight-dark) !important;
+}
+
+/* Исправления для страницы Commands */
+.dark .commands-container .bg-blue-50,
+.dark .commands-container .bg-indigo-50,
+.dark .commands-container .bg-primary-50 {
+  background-color: var(--secondary-dark) !important;
+}
+
+/* Исправления для страницы Bulk Messaging */
+.dark .messaging-container .bg-blue-100,
+.dark .messaging-container .bg-indigo-100,
+.dark .messaging-container .bg-primary-100 {
+  background-color: var(--secondary-dark) !important;
+}
+
+/* Исправления для страницы Flow */
+.dark .flow-container .bg-blue-50,
+.dark .flow-editor .bg-blue-50,
+.dark .flow-node {
+  background-color: var(--secondary-dark) !important;
+}
+
+/* Исправления для компонентов форм на всех страницах */
+.dark .form-container, .dark .settings-container, .dark .modal-content {
+  background-color: var(--secondary-dark) !important;
+}
+
+/* Общие исправления для всех панелей */
+.dark .panel, .dark .card, .dark .section {
+  background-color: var(--secondary-dark) !important;
+  border-color: var(--border-dark) !important;
+}
+
+/* Исправления для заголовков страниц */
+.dark .page-header, .dark .section-header {
+  background-color: var(--primary-dark) !important;
+}
+
+/* Для различных синих фонов в компонентах */
+.dark .bg-indigo-50, .dark .bg-blue-50, .dark .bg-sky-50, .dark .bg-primary-50 {
+  background-color: var(--secondary-dark) !important;
+}
+
+/* Исправления для форм и инпутов */
+.dark input, .dark select, .dark textarea {
+  background-color: var(--accent-dark) !important;
+  border-color: var(--border-dark) !important;
+  color: var(--text-primary-dark) !important;
+}
+
+/* Глобальное переопределение всех голубых и индиго фонов */
+.dark [class*="bg-blue-"], .dark [class*="bg-indigo-"], 
+.dark [class*="bg-sky-"], .dark [class*="bg-primary-"] {
+  background-color: var(--secondary-dark) !important;
+}
+
+/* Обработка синих кнопок */
+.dark button.bg-blue-600, .dark button.bg-indigo-600, 
+.dark button.bg-primary-600, .dark .btn-primary {
+  background-color: var(--highlight-dark) !important;
+}
+
+/* Обработка ховера для кнопок */
+.dark button.bg-blue-600:hover, .dark button.bg-indigo-600:hover,
+.dark button.bg-primary-600:hover, .dark .btn-primary:hover {
+  background-color: #444444 !important;
+}
+
+/* Исключение для статусов и бейджей */
+.dark span.bg-blue-100.text-blue-800, 
+.dark span.bg-green-100.text-green-800,
+.dark span.bg-yellow-100.text-yellow-800,
+.dark span.bg-red-100.text-red-800,
+.dark span.bg-purple-100.text-purple-800 {
+  background-color: rgba(30, 58, 138, 0.2) !important;
+}
+
+/* Фиксим модалки в темной теме */
+.dark div[role="dialog"], .dark .modal, .dark .dialog {
+  background-color: var(--secondary-dark) !important;
+  border-color: var(--border-dark) !important;
+  color: var(--text-primary-dark) !important;
+}
+
+/* Исправления для модальных окон и диалогов */
+.dark .modal-content,
+.dark .dialog-content,
+.dark div[role="dialog"] > div,
+.dark .ReactModal__Content {
+  background-color: var(--secondary-dark) !important;
+  border-color: var(--border-dark) !important;
+}
+
+/* Исправления для конкретных страниц */
+.dark [data-pathname^="/dashboard/commands"],
+.dark [data-pathname^="/dashboard/flows"],
+.dark [data-pathname^="/dashboard/bulk-messaging"],
+.dark [data-pathname^="/dashboard/settings"] {
+  background-color: var(--primary-dark) !important;
+}
+
+/* Исправления для панелей внутри страниц */
+.dark [data-pathname^="/dashboard/commands"] .bg-white,
+.dark [data-pathname^="/dashboard/flows"] .bg-white,
+.dark [data-pathname^="/dashboard/bulk-messaging"] .bg-white,
+.dark [data-pathname^="/dashboard/settings"] .bg-white {
+  background-color: var(--secondary-dark) !important;
+}
+
+/* Исправления для редактора потоков (Flow Editor) */
+.dark .flow-editor,
+.dark .flow-editor-panel,
+.dark .flow-step-editor,
+.dark .flow-node,
+.dark .flow-connection {
+  background-color: var(--secondary-dark) !important;
+  border-color: var(--border-dark) !important;
+}
+
+/* Исправление для всех компонентов внутри тикетов */
+.dark .ticket-detail .bg-white,
+.dark .ticket-detail .bg-blue-50,
+.dark .ticket-detail .bg-indigo-50,
+.dark .ticket-detail .message-input {
+  background-color: var(--secondary-dark) !important;
+}
+
+/* Исправления для разделов Send Message */
+.dark .message-compose,
+.dark .message-editor,
+.dark .message-input-container {
+  background-color: var(--secondary-dark) !important;
+  border-color: var(--border-dark) !important;
+}
+
+/* Исправления для верхних частей страниц */
+.dark .page-header,
+.dark .section-top,
+.dark .header-container {
+  background-color: var(--primary-dark) !important;
+}
+
+/* Исправления для всех контейнеров белых карточек */
+.dark .bg-white {
+  background-color: var(--secondary-dark) !important;
+}
+
+/* Особые правила для страницы bulk messaging */
+.dark .bulk-messaging-container,
+.dark .bulk-messaging-form,
+.dark .bulk-recipients-list,
+.dark .bulk-message-preview {
+  background-color: var(--secondary-dark) !important;
+}
+
+/* Исправления для вкладок и табов */
+.dark .tab-active,
+.dark .tab-selected,
+.dark .tab-current {
+  background-color: var(--highlight-dark) !important;
+}
+
+.dark .tab,
+.dark .tab-inactive {
+  background-color: var(--accent-dark) !important;
+}
+
+/* Самые общие правила с высоким приоритетом */
+.dark .bg-blue-100, .dark .bg-blue-200, .dark .bg-blue-300,
+.dark .bg-indigo-100, .dark .bg-indigo-200, .dark .bg-indigo-300,
+.dark .bg-sky-100, .dark .bg-sky-200, .dark .bg-sky-300 {
+  background-color: var(--secondary-dark) !important;
+}
+
+/* Особенно важные переопределения для кнопок */
+.dark button, .dark .button {
+  border-color: var(--border-dark) !important;
+}
+
+.dark button.primary, .dark .button.primary {
+  background-color: var(--highlight-dark) !important;
+}
+
+/* Максимально специфичные правила для исправления синих цветов */
+.dark *[class*="bg-blue"],
+.dark *[class*="bg-indigo"],
+.dark *[class*="bg-sky"],
+.dark *[class*="bg-primary"] {
+  background-color: var(--secondary-dark) !important;
+}
+
+/* Исключения для статусов и бейджей */
+.dark span[class*="bg-blue"][class*="text-blue"],
+.dark span[class*="bg-green"][class*="text-green"],
+.dark span[class*="bg-yellow"][class*="text-yellow"],
+.dark span[class*="bg-red"][class*="text-red"] {
+  /* Сохраняем цвета для статусов */
+  background-color: rgba(30, 58, 138, 0.2) !important;
+}
+
+/* Применяем темные стили к основным компонентам UI библиотек */
+.dark .MuiPaper-root,
+.dark .MuiCard-root,
+.dark .MuiAppBar-root,
+.dark .MuiDrawer-paper,
+.dark .chakra-modal__content,
+.dark .chakra-card,
+.dark .ant-card,
+.dark .ant-modal-content,
+.dark .ant-drawer-content {
+  background-color: var(--secondary-dark) !important;
+  border-color: var(--border-dark) !important;
+  color: var(--text-primary-dark) !important;
+}
+
+/* Переопределение для div с голубым фоном */
+.dark div[style*="background-color: rgb(59, 130, 246)"],
+.dark div[style*="background-color: #3b82f6"],
+.dark div[style*="background-color: rgb(79, 70, 229)"],
+.dark div[style*="background-color: #4f46e5"] {
+  background-color: var(--accent-dark) !important;
+}
+
+/* Для компонентов Tailwind UI которые могут использоваться */
+.dark .tw-bg-blue-500,
+.dark .tw-bg-blue-600,
+.dark .tw-bg-blue-700,
+.dark .tw-bg-indigo-500,
+.dark .tw-bg-indigo-600,
+.dark .tw-bg-indigo-700 {
+  background-color: var(--accent-dark) !important;
+}
+
+/* Для элементов в настройках */
+.dark .settings-card,
+.dark .settings-form,
+.dark .settings-section,
+.dark .preferences-panel {
+  background-color: var(--secondary-dark) !important;
+  border-color: var(--border-dark) !important;
+}
+
+/* Специфичные правила для ticket-detail */
+.dark .ticket-detail-header,
+.dark .ticket-messages,
+.dark .ticket-sidebar,
+.dark .ticket-actions {
+  background-color: var(--secondary-dark) !important;
+}
+
+/* Глобальные правила для панелей */
+body.dark .panel,
+body.dark .card,
+body.dark .box,
+body.dark aside,
+body.dark section,
+body.dark .container:not(.main-container) {
+  background-color: var(--secondary-dark) !important;
+}
+
+/* Для всех возможных вариаций классов с bg-blue и bg-indigo в компонентах */
+html.dark [class*="bg-blue-"],
+html.dark [class*="bg-indigo-"],
+html.dark [class*="bg-sky-"],
+html.dark [class*="bg-primary-"] {
+  background-color: var(--secondary-dark) !important;
+}

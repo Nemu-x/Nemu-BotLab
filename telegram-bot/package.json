@@ -1,0 +1,17 @@
+{
+  "name": "telegram-bot",
+  "version": "1.0.0",
+  "description": "Telegram Bot Management System",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"cd telegram-bot-backend && npm run dev\" \"cd telegram-bot-frontend && npm run dev\"",
+    "dev:backend": "cd telegram-bot-backend && npm run dev",
+    "dev:frontend": "cd telegram-bot-frontend && npm run dev",
+    "install:all": "npm install && cd telegram-bot-backend && npm install && cd ../telegram-bot-frontend && npm install",
+    "build": "cd telegram-bot-frontend && npm run build",
+    "start": "concurrently \"cd telegram-bot-backend && npm run start\" \"cd telegram-bot-frontend && npm run start\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+} 
