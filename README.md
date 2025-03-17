@@ -13,6 +13,24 @@ Admin dashboard for managing Telegram bot with comprehensive UI and powerful fea
 - **Dark/Light Theme**: Customizable UI appearance with dark and light mode
 - **Analytics Dashboard**: Monitor bot performance and user engagement
 
+## Screenshots
+
+### Dashboard
+<!-- Insert dashboard screenshot here -->
+![Dashboard](screenshots/dashboard.png)
+
+### Chat Interface
+<!-- Insert chat interface screenshot here -->
+![Chat Interface](screenshots/chat.png)
+
+### Flow Management
+<!-- Insert flow management screenshot here -->
+![Flow Management](screenshots/flow.png)
+
+### Settings
+<!-- Insert settings screenshot here -->
+![Settings](screenshots/settings.png)
+
 ## Tech Stack
 
 - **Frontend**: Next.js, React, Tailwind CSS
