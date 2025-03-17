@@ -17,19 +17,22 @@ Admin dashboard for managing Telegram bot with comprehensive UI and powerful fea
 
 ### Dashboard
 <!-- Insert dashboard screenshot here -->
-![Dashboard](![image](https://github.com/user-attachments/assets/df0e42c3-3fc4-4e23-9c89-d99ab6395d99))
+![image](https://github.com/user-attachments/assets/00219f05-a876-4e95-bb0d-2ef974d0aeff)
 
 ### Chat Interface
 <!-- Insert chat interface screenshot here -->
-![Chat Interface](screenshots/chat.png)
+![image](https://github.com/user-attachments/assets/1ac87c5b-bea0-4ee8-90c7-bdacc027546e)
 
 ### Flow Management
 <!-- Insert flow management screenshot here -->
-![Flow Management](screenshots/flow.png)
+![image](https://github.com/user-attachments/assets/e1d7ea3d-fb2f-4ee6-8b1d-256f93fc1e0e)
+![image](https://github.com/user-attachments/assets/648cc795-fa40-461f-abc1-34d2551a0c4b)
+
 
 ### Settings
 <!-- Insert settings screenshot here -->
-![Settings](screenshots/settings.png)
+![image](https://github.com/user-attachments/assets/2db114ac-19e3-4dac-b01f-40a5ececd1d2)
+
 
 ## Tech Stack
 
