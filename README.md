@@ -1,100 +1,98 @@
-# Telegram Bot Administrator
+# Bot Lab
 
-## Обзор системы
+Admin dashboard for managing Telegram bot with comprehensive UI and powerful features.
 
-Telegram Bot Administrator - это веб-приложение, предназначенное для управления Telegram ботом. Система состоит из:
+## Features
 
-1. **Бэкенд** (Node.js + Express + Sequelize)
-2. **Фронтенд** (Next.js + React)
-3. **Telegram Bot API** интеграция
+- **User Authentication & Authorization**: Role-based access control with different permission levels
+- **Real-time Chat Interface**: Communicate with clients directly through the dashboard
+- **Flow Management**: Create and manage conversation flows for automated interactions
+- **Command Configuration**: Set up and manage bot commands with flexible responses
+- **Ticket System**: Track and manage support requests from users
+- **Multi-language Support**: Built-in support for English and Russian languages
+- **Dark/Light Theme**: Customizable UI appearance with dark and light mode
+- **Analytics Dashboard**: Monitor bot performance and user engagement
 
-## Функциональность
+## Tech Stack
 
-- Управление командами бота
-- Ведение диалогов с пользователями
-- Опросники (Flow) для автоматического сбора информации
-- Управление настройками бота
-- Администрирование пользователей
+- **Frontend**: Next.js, React, Tailwind CSS
+- **Backend**: Express.js, Sequelize ORM
+- **Database**: SQLite (development), PostgreSQL (production)
 
-## Запуск приложения
+## Getting Started
 
-### Предварительные требования
+### Prerequisites
 
-- Node.js v18+
-- npm или yarn
-- Telegram Bot API токен
+- Node.js (v16 or higher)
+- npm (v7 or higher)
+- SQLite or PostgreSQL
 
-### Запуск бэкенда
+### Installation
 
-```bash
-cd telegram-bot-backend
-npm install
-npm run dev
-```
+1. Clone the repository
+   ```bash
+   git clone https://github.com/Nemu-x/Bot-Lab.git
+   cd Bot-Lab
+   ```
 
-### Запуск фронтенда
+2. Install frontend dependencies
+   ```bash
+   cd telegram-bot-frontend
+   npm install
+   ```
 
-```bash
-cd telegram-bot-frontend
-npm install
-npm run dev
-```
+3. Install backend dependencies
+   ```bash
+   cd ../telegram-bot-backend
+   npm install
+   ```
 
-## Опросники (Flow)
+4. Configure environment variables
+   - Create `.env` file in `telegram-bot-backend` directory based on `.env.example`
+   - Create `.env.local` file in `telegram-bot-frontend` directory
 
-Функциональность опросников (Flow) позволяет создавать интерактивные последовательности сообщений для сбора информации от пользователей Telegram.
+5. Run database migrations
+   ```bash
+   cd telegram-bot-backend
+   npx sequelize-cli db:migrate
+   ```
 
-### Создание опросника
+6. Start the development servers
+   ```bash
+   # Start backend
+   cd telegram-bot-backend
+   npm run dev
 
-1. Перейдите в раздел "Опросники" в панели администратора
-2. Нажмите кнопку "Создать опросник"
-3. Заполните информацию:
-   - Название опросника
-   - Описание
-   - Настройте начальную команду
+   # Start frontend (in a new terminal)
+   cd telegram-bot-frontend
+   npm run dev
+   ```
 
-### Добавление шагов опросника
+7. Access the application
+   - Frontend: http://localhost:3000
+   - Backend API: http://localhost:3003
 
-1. Для каждого шага опросника нажмите "Добавить шаг"
-2. Заполните поля:
-   - Текст вопроса
-   - Тип ожидаемого ответа
-   - Варианты ответов (если применимо)
-   - Следующий шаг
+## Deployment
 
-### Ветвление и условия
+See [DEPLOYMENT.md](documentation/deployment-guide.md) for detailed deployment instructions.
 
-- Вы можете создавать условия для перехода к разным шагам в зависимости от ответа пользователя
-- Настройте эти условия в разделе "Условия" каждого шага
+## Documentation
 
-### Просмотр результатов
+- [Database Structure](documentation/db-structure.md)
+- [API Endpoints](documentation/api-endpoints.md)
+- [Architecture Overview](documentation/architecture.md)
+- [Deployment Guide](documentation/deployment-guide.md)
 
-Результаты опросников доступны в профиле каждого клиента в разделе "Данные опросов".
+## Contributing
 
-## Исправление типичных проблем
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-### Проблема 1: Ошибка "Failed to fetch clients"
+## License
 
-Эта ошибка возникает из-за несоответствия структуры базы данных и моделей Sequelize. 
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-**Решение:**
-1. Убедитесь, что все необходимые миграции выполнены
-2. Проверьте, что все поля, используемые в модели Client, существуют в таблице clients
+## Acknowledgements
 
-### Проблема 2: Ошибка "SQLITE_ERROR: no such column"
-
-Эта ошибка указывает на то, что в базе данных отсутствует столбец, который используется в запросе.
-
-**Решение:**
-1. Создайте миграцию для добавления отсутствующего столбца
-2. Запустите миграцию с помощью команды `npm run migrate`
-
-### Проблема 3: Не работает авторизация
-
-**Решение:**
-1. Проверьте правильность JWT токена
-2. Убедитесь, что middleware аутентификации правильно сконфигурирован
-
-## Дополнительная документация
-
-Более подробное руководство по созданию и управлению опросниками можно найти в файле [FLOW_GUIDE.md](/home/ak/telegram-bot/FLOW_GUIDE.md). 
+- Built by [Nemu_xx](https://github.com/Nemu-x)
+- Icons by [react-icons](https://react-icons.github.io/react-icons/)
+- UI components styled with [Tailwind CSS](https://tailwindcss.com/)
