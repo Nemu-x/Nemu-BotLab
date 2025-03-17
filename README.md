@@ -17,7 +17,7 @@ Admin dashboard for managing Telegram bot with comprehensive UI and powerful fea
 
 ### Dashboard
 <!-- Insert dashboard screenshot here -->
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](![image](https://github.com/user-attachments/assets/df0e42c3-3fc4-4e23-9c89-d99ab6395d99))
 
 ### Chat Interface
 <!-- Insert chat interface screenshot here -->
@@ -111,6 +111,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Acknowledgements
 
-- Built by [Nemu_xx](https://github.com/Nemu-x)
+- Built by [Nemu-x](https://github.com/Nemu-x)
 - Icons by [react-icons](https://react-icons.github.io/react-icons/)
 - UI components styled with [Tailwind CSS](https://tailwindcss.com/)
