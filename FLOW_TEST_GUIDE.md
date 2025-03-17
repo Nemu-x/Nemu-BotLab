@@ -1,146 +1,162 @@
-# Руководство по созданию тестового опросника с автоответом
+# Guide to Creating a Test Questionnaire with Auto-Response
 
-## Введение
+## Introduction
 
-Это руководство поможет вам создать опросник (Flow) с 10 последовательными вопросами и автоматическим ответом на основе полученных данных. Такой опросник может использоваться для:
+This guide will help you create a Flow with 10 sequential questions and an automatic response based on the data collected. Such a questionnaire can be used for:
 
-- Проведения тестирования знаний
-- Сбора информации о клиенте
-- Квалификации лидов
-- Автоматизации процесса поддержки
+- Knowledge testing
+- Collecting client information
+- Lead qualification
+- Automating the support process
 
-## Шаг 1: Создание нового Flow
+## Step 1: Creating a New Flow
 
-1. Перейдите в раздел "Опросники" в админ-панели
-2. Нажмите кнопку "Создать опросник"
-3. Заполните основную информацию:
-   - **Название**: "Тестовый опросник"
-   - **Описание**: "Опросник из 10 вопросов с автоматическим ответом"
-   - **Активность**: Включено
-   - **Команда запуска**: Выберите существующую команду или создайте новую (например, `/test`)
+1. Go to the "Flows" section in the admin panel
+2. Click the "Create Flow" button
+3. Fill in the basic information:
+   - **Name**: "Test Questionnaire"
+   - **Description**: "10-question questionnaire with automatic response"
+   - **Active**: Enabled
+   - **Launch command**: Select an existing command or create a new one (e.g., `/test`)
 
-## Шаг 2: Создание вопросов
+## Step 2: Creating the First Questions
 
-Создайте 10 последовательных вопросов. Для каждого вопроса:
+Configure the first 5 questions:
 
-1. Нажмите "Добавить шаг"
-2. Заполните информацию:
-   - **Заголовок**: "Вопрос X" (где X - номер вопроса)
-   - **Сообщение**: Текст вопроса
-   - **Кнопки**: Добавьте варианты ответов (если нужно)
+1. **Question 1: Personal Information**
+   - **Title**: "Name"
+   - **Text**: "Please enter your name:"
+   - **Next step**: Question 2
 
-### Пример структуры вопросов:
+2. **Question 2: Contact Information**
+   - **Title**: "Email"
+   - **Text**: "Please enter your email address:"
+   - **Next step**: Question 3
 
-#### Вопрос 1: Базовая информация
-- **Заголовок**: "Вопрос 1"
-- **Сообщение**: "Как вас зовут?"
-- **Тип кнопок**: Без кнопок (ожидание текстового ввода)
+3. **Question 3: Experience Level**
+   - **Title**: "Experience"
+   - **Text**: "What is your experience level in this field?"
+   - **Buttons**:
+     - "Beginner" → Question 4
+     - "Intermediate" → Question 4
+     - "Advanced" → Question 4
+   - **Next step**: Question 4
 
-#### Вопрос 2: Выбор из вариантов
-- **Заголовок**: "Вопрос 2"
-- **Сообщение**: "Выберите вашу возрастную группу:"
-- **Тип кнопок**: Inline
-- **Кнопки**:
-  - "18-25" (значение: "18-25")
-  - "26-35" (значение: "26-35")
-  - "36-45" (значение: "36-45")
-  - "46+" (значение: "46+")
+4. **Question 4: Interest Areas**
+   - **Title**: "Interests"
+   - **Text**: "Which areas are you interested in? (Select all that apply)"
+   - **Buttons**:
+     - "Technology" → Question 5
+     - "Business" → Question 5
+     - "Design" → Question 5
+     - "Marketing" → Question 5
+   - **Next step**: Question 5
 
-#### Вопрос 3-9: Дополнительные вопросы
-Создайте остальные вопросы по аналогии, чередуя типы вопросов (текстовые, с выбором вариантов и т.д.)
+5. **Question 5: Goals**
+   - **Title**: "Goals"
+   - **Text**: "What are your primary goals?"
+   - **Buttons**:
+     - "Learning new skills" → Question 6
+     - "Career advancement" → Question 6
+     - "Starting a business" → Question 6
+     - "Personal development" → Question 6
+   - **Next step**: Question 6
 
-#### Вопрос 10: Заключительный вопрос
-- **Заголовок**: "Вопрос 10"
-- **Сообщение**: "Спасибо за ответы! Хотите получить результат?"
-- **Тип кнопок**: Inline
-- **Кнопки**:
-  - "Да" (значение: "yes")
-  - "Нет" (значение: "no")
+## Step 3: Creating the Next Questions
 
-## Шаг 3: Настройка логики обработки ответов
+Configure the remaining 5 questions:
 
-Для создания автоответа на основе полученных данных:
+6. **Question 6: Budget**
+   - **Title**: "Budget"
+   - **Text**: "What is your approximate budget?"
+   - **Buttons**:
+     - "Under $1,000" → Question 7
+     - "$1,000 - $5,000" → Question 7
+     - "$5,000 - $10,000" → Question 7
+     - "Over $10,000" → Question 7
+   - **Next step**: Question 7
 
-1. Добавьте дополнительный шаг "Результат"
-2. В поле "Сообщение" используйте шаблон с переменными:
-   ```
-   Спасибо за прохождение теста, {{name}}!
-   
-   Ваши ответы:
-   1. Имя: {{answers.1}}
-   2. Возраст: {{answers.2}}
-   3. {{question3}}: {{answers.3}}
-   ...
-   
-   На основе ваших ответов, мы рекомендуем:
-   {{recommendation}}
-   ```
+7. **Question 7: Timeline**
+   - **Title**: "Timeline"
+   - **Text**: "What is your expected timeline?"
+   - **Buttons**:
+     - "Under 1 month" → Question 8
+     - "1-3 months" → Question 8
+     - "3-6 months" → Question 8
+     - "Over 6 months" → Question 8
+   - **Next step**: Question 8
 
-3. Добавьте условия для формирования рекомендаций на основе ответов:
-   - Если ответ на вопрос 2 = "18-25" и ответ на вопрос 5 = "X", то рекомендация A
-   - Если ответ на вопрос 2 = "26-35" и ответ на вопрос 5 = "Y", то рекомендация B
-   - И т.д.
+8. **Question 8: Frequency**
+   - **Title**: "Frequency"
+   - **Text**: "How often would you like to receive updates?"
+   - **Buttons**:
+     - "Daily" → Question 9
+     - "Weekly" → Question 9
+     - "Monthly" → Question 9
+     - "Quarterly" → Question 9
+   - **Next step**: Question 9
 
-## Шаг 4: Техническая реализация
+9. **Question 9: Preferred Contact Method**
+   - **Title**: "Contact Method"
+   - **Text**: "What is your preferred contact method?"
+   - **Buttons**:
+     - "Email" → Question 10
+     - "Phone" → Question 10
+     - "Telegram" → Question 10
+     - "WhatsApp" → Question 10
+   - **Next step**: Question 10
 
-Для реализации автоответа потребуется добавить логику в бота. В файле `bot.service.js` нужно:
+10. **Question 10: Additional Information**
+    - **Title**: "Additional Info"
+    - **Text**: "Is there anything else you would like to add?"
+    - **Next step**: Result
 
-1. Сохранять все ответы пользователя
-2. Анализировать ответы после завершения опросника
-3. Формировать персонализированный ответ
+## Step 4: Creating the Result Step
 
-### Пример кода для обработки ответов:
+1. Add a final step:
+   - **Title**: "Result"
+   - **Text**: "Thank you for completing the questionnaire! Based on your responses, we recommend: {{recommendation}}"
+   - Mark this step as "Final step"
 
-```javascript
-// В методе processFlowResponse добавить:
-if (currentStep.isLastStep) {
-  // Анализируем ответы
-  const answers = this.clientSurveyState[clientId].answers;
-  let recommendation = '';
-  
-  // Пример логики формирования рекомендации
-  if (answers[2] === '18-25') {
-    if (answers[5] === 'option1') {
-      recommendation = 'Рекомендация A';
-    } else {
-      recommendation = 'Рекомендация B';
-    }
-  } else if (answers[2] === '26-35') {
-    recommendation = 'Рекомендация C';
-  } else {
-    recommendation = 'Рекомендация D';
-  }
-  
-  // Формируем сообщение с результатом
-  let resultMessage = `Спасибо за прохождение теста, ${answers[1]}!\n\n`;
-  resultMessage += `Ваши ответы:\n`;
-  
-  // Добавляем все ответы
-  Object.keys(answers).forEach(questionNum => {
-    resultMessage += `${questionNum}. ${answers[questionNum]}\n`;
-  });
-  
-  resultMessage += `\nНаша рекомендация: ${recommendation}`;
-  
-  // Отправляем результат
-  await this.bot.sendMessage(chatId, resultMessage);
-}
-```
+## Step 5: Adding Auto-Response Logic
 
-## Шаг 5: Тестирование
+1. Add a condition for the Result step to generate a personalized recommendation based on previous answers:
+   - If Experience = "Beginner" and Goals = "Learning new skills":
+     - Set recommendation = "Our Beginner Course Package with weekly consultations"
+   - If Experience = "Intermediate" and Interests contains "Technology":
+     - Set recommendation = "Advanced Technology Program with practical projects"
+   - If Experience = "Advanced" and Budget = "Over $10,000":
+     - Set recommendation = "Executive Mentorship Program with industry experts"
+   - Default recommendation:
+     - Set recommendation = "Our standard package with customized options"
 
-1. Сохраните опросник
-2. Откройте Telegram и отправьте команду `/test` боту
-3. Пройдите все 10 вопросов
-4. Проверьте, что автоответ формируется корректно
+## Step 6: Testing the Flow
 
-## Дополнительные возможности
+1. Save all changes
+2. Use the "Test" button to preview the flow
+3. Go through all possible paths to ensure correct behavior
+4. Verify that the auto-response logic provides appropriate recommendations
 
-- **Сохранение результатов**: Добавьте сохранение результатов в базу данных для дальнейшего анализа
-- **Экспорт данных**: Реализуйте возможность экспорта результатов в CSV или Excel
-- **Уведомления**: Настройте отправку уведомлений администраторам о завершенных тестах
-- **Аналитика**: Добавьте дашборд с аналитикой по ответам пользователей
+## Step 7: Analyzing Results
 
-## Заключение
+After implementing the questionnaire:
 
-Используя данное руководство, вы можете создать интерактивный опросник с автоматическим анализом ответов и формированием персонализированных рекомендаций. Такой подход позволяет автоматизировать процесс взаимодействия с пользователями и предоставлять им ценную информацию без участия оператора. 
+1. Monitor completion rates
+2. Review the distribution of answers to identify trends
+3. Adjust questions or auto-response logic based on the data collected
+4. Use insights to improve your service offerings
+
+## Tips for Effective Implementation
+
+- **Clear Instructions**: Provide context for why you're asking each question
+- **Progress Indicators**: Let users know how far they are in the questionnaire
+- **Response Validation**: Ensure that free-text responses are validated where necessary
+- **Save Partial Progress**: Allow users to resume incomplete questionnaires
+- **Follow-up**: Send a follow-up message after questionnaire completion
+
+## Technical Notes
+
+- Save all responses to user profile for future reference
+- Set up notifications to alert staff when questionnaires are completed
+- Configure analytics to track completion rates and common response patterns
+- Periodically review and update the questionnaire based on user feedback 
